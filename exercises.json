@@ -1,0 +1,218 @@
+{
+    "High Stress": [
+        {
+            "title": "High-Intensity Interval Training (HIIT)",
+            "image": "/images/high_stress_1.jpeg"
+        },
+        {
+            "title": "Kickboxing",
+            "image": "/images/high_stress_2.jpeg"
+        },
+        {
+            "title": "Rock Climbing",
+            "image": "/images/high_stress_3.jpeg"
+        },
+        {
+            "title": "Team Sports",
+            "image": "/images/high_stress_4.jpeg"
+        }
+    ],
+    "Medium Stress": [
+        {
+            "title": "Cardio Exercise",
+            "image": "/images/medium_stress_1.jpeg"
+        },
+        {
+            "title": "Swimming",
+            "image": "/images/medium_stress_2.jpeg"
+        },
+        {
+            "title": "Dancing",
+            "image": "/images/medium_stress_3.jpeg"
+        },
+        {
+            "title": "Cycling",
+            "image": "/images/medium_stress_4.jpeg"
+        }
+    ],
+    "Low Stress": [
+        {
+            "title": "Deep Breathing",
+            "image": "/images/low_stress_1.jpeg"
+        },
+        {
+            "title": "Gentle Yoga",
+            "image": "/images/low_stress_2.jpeg"
+        },
+        {
+            "title": "Walking in Nature",
+            "image": "/images/low_stress_3.jpeg"
+        },
+        {
+            "title": "Mindfulness Meditation",
+            "image": "/images/low_stress_4.jpeg"
+        }
+    ],
+    "Extreme Stress": [
+        {
+            "title": "Marathon Running",
+            "image": "/images/extreme_stress_1.jpeg"
+        },
+        {
+            "title": "CrossFit",
+            "image": "/images/extreme_stress_2.jpeg"
+        },
+        {
+            "title": "Triathlon Training",
+            "image": "/images/extreme_stress_3.jpeg"
+        },
+        {
+            "title": "Advanced Yoga",
+            "image": "/images/extreme_stress_4.jpeg"
+        }
+    ],
+    "High Anxiety": [
+        {
+            "title": "Exposure Therapy",
+            "image": "/images/1.jpeg"
+        },
+        {
+            "title": "Meditation Retreat",
+            "image": "/images/2.jpeg"
+        },
+        {
+            "title": "Cognitive Behavioral Therapy",
+            "image": "/images/3.jpeg"
+        },
+        {
+            "title": "Guided Visualization",
+            "image": "/images/high_anxiety_4.jpeg"
+        }
+    ],
+    "Medium Anxiety": [
+        {
+            "title": "Breathing Exercises",
+            "image": "/images/medium_anxiety_1.jpeg"
+        },
+        {
+            "title": "Journaling",
+            "image": "/images/medium_anxiety_2.jpeg"
+        },
+        {
+            "title": "Yoga",
+            "image": "/images/medium_anxiety_3.jpeg"
+        },
+        {
+            "title": "Walking",
+            "image": "/images/medium_anxiety_4.jpeg"
+        }
+    ],
+    "Low Anxiety": [
+        {
+            "title": "Mindfulness Meditation",
+            "image": "/images/low_anxiety_1.jpeg"
+        },
+        {
+            "title": "Breath Counting",
+            "image": "/images/low_anxiety_2.jpeg"
+        },
+        {
+            "title": "Relaxation Techniques",
+            "image": "/images/low_anxiety_3.jpeg"
+        },
+        {
+            "title": "Listening to Music",
+            "image": "/images/low_anxiety_4.jpeg"
+        }
+    ],
+    "Extreme Anxiety": [
+        {
+            "title": "Intensive Therapy Sessions",
+            "image": "/images/extreme_anxiety_1.jpeg"
+        },
+        {
+            "title": "Extreme Exposure Therapy",
+            "image": "/images/extreme_anxiety_2.jpeg"
+        },
+        {
+            "title": "Medication Consultation",
+            "image": "/images/extreme_anxiety_3.jpeg"
+        },
+        {
+            "title": "Mindfulness Training",
+            "image": "/images/extreme_anxiety_4.jpeg"
+        }
+    ],
+    "High Depression": [
+        {
+            "title": "Intensive Therapy",
+            "image": "/images/high_depression_1.jpeg"
+        },
+        {
+            "title": "Medication Management",
+            "image": "/images/high_depression_2.jpeg"
+        },
+        {
+            "title": "Support Groups",
+            "image": "/images/high_depression_3.jpeg"
+        },
+        {
+            "title": "Art Therapy",
+            "image": "/images/high_depression_4.jpeg"
+        }
+    ],
+    "Medium Depression": [
+        {
+            "title": "Cognitive Behavioral Therapy",
+            "image": "/images/medium_depression_1.jpeg"
+        },
+        {
+            "title": "Exercise Programs",
+            "image": "/images/medium_depression_2.jpeg"
+        },
+        {
+            "title": "Mindfulness Practices",
+            "image": "/images/medium_depression_3.jpeg"
+        },
+        {
+            "title": "Supportive Counseling",
+            "image": "/images/medium_depression_4.jpeg"
+        }
+    ],
+    "Low Depression": [
+        {
+            "title": "Regular Exercise",
+            "image": "/images/low_depression_1.jpeg"
+        },
+        {
+            "title": "Journaling",
+            "image": "/images/low_depression_2.jpeg"
+        },
+        {
+            "title": "Hiking",
+            "image": "/images/low_depression_3.jpeg"
+        },
+        {
+            "title": "Talking to Friends",
+            "image": "/images/low_depression_4.jpeg"
+        }
+    ],
+    "Extreme Depression": [
+        {
+            "title": "Hospitalization",
+            "image": "/images/extreme_depression_1.jpeg"
+        },
+        {
+            "title": "Intensive Therapy Programs",
+            "image": "/images/extreme_depression_2.jpeg"
+        },
+        {
+            "title": "Electroconvulsive Therapy",
+            "image": "/images/extreme_depression_3.jpeg"
+        },
+        {
+            "title": "Medication Management",
+            "image": "/images/extreme_depression_4.jpeg"
+        }
+    ]
+}

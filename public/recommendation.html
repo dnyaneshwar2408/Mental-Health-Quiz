@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/recommendations.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recommendations Page</title>
+    <style>
+        /* Navigation bar styling */
+       
+    .topnav {
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #000;
+      text-align: left;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+        body {
+            background-image: url('https://img.freepik.com/free-photo/rainy-day-mood-cartoon-style_23-2151557003.jpg?uid=R165677031&ga=GA1.1.878017198.1726736695&semt=ais_hybrid'); /* Background image */
+            background-size: cover;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+       
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .recommendation {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .exercise-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .exercise-title {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%; /* Responsive image */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body><div class="container"></div><div class="topnav" id="myTopnav"></div>
+    <a href="http://localhost:8080/home" class="active">Home</a>
+  </div>  
+    <h1 id="varDisplay"></h1>  <div id="exercise-container" class="exercise-container"></div>
+</div><h1>Consultant Details</h1>
+<div class="meditation-container">
+    <!-- Meditation Box 1 -->
+    <div id="consultant-container"></div>
+
+
+</div>
+    <script>
+
+        const consultant = {
+    "Low Stress": {
+      "image_link": "https://media.istockphoto.com/id/1298800629/photo/portrait-of-confident-male-doctor-looking-at-camera.webp?a=1&b=1&s=612x612&w=0&k=20&c=zDglgekwTgR0ng2XiDRs0ZN3drnlXpB5smEmoBB243A=",
+      "consultant_name": "Dr. A. Sharma",
+      "phone_no": "+1234567890"
+    },
+    "Medium Stress": {
+      "image_link": "https://media.istockphoto.com/id/1292015214/photo/portrait-female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=_aAgj9DyOGjHbF12Qmy74PaSJoV7iD61yZ9cKgBW_wc=",
+      "consultant_name": "Dr. B. Verma",
+      "phone_no": "+0987654321"
+    },
+    "High Stress": {
+      "image_link": "https://media.istockphoto.com/id/1342708859/photo/portrait-of-a-male-doctor.webp?a=1&b=1&s=612x612&w=0&k=20&c=aGcJD7YXbTKk-UPvemxZQ5EWQGDfuXrIv-7HvAsewLQ=",
+      "consultant_name": "Dr. C. Rao",
+      "phone_no": "+1122334455"
+    },
+    "Extreme Stress": {
+      "image_link": "https://media.istockphoto.com/id/1301595548/photo/female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=PW3Lbgi6F8DjYdKffpo6Uyo07ZBxw69utLcASzxX3b0=",
+      "consultant_name": "Dr. D. Singh",
+      "phone_no": "+2233445566"
+    },
+    "Low Depression": {
+      "image_link": "https://media.istockphoto.com/id/1292015214/photo/portrait-female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=_aAgj9DyOGjHbF12Qmy74PaSJoV7iD61yZ9cKgBW_wc=",
+      "consultant_name": "Dr. E. Mehta",
+      "phone_no": "+3344556677"
+    },
+    "Medium Depression": {
+      "image_link": "https://media.istockphoto.com/id/1189304032/photo/doctor-holding-digital-tablet-at-meeting-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=NiGLoxg7DpJ5EjUoOHC_KQfyqRq5Jgtt-gyiwNeciN0=",
+      "consultant_name": "Dr. F. Khan",
+      "phone_no": "+4455667788"
+    },
+    "High Depression": {
+      "image_link": "https://media.istockphoto.com/id/1298932006/photo/female-doctor-sitting-at-desk-in-office-clinic.webp?a=1&b=1&s=612x612&w=0&k=20&c=7qcmIN3rJumN3jFTXPLG-qJiS4O66fO4l8XZqY3o2EI=",
+      "consultant_name": "Dr. G. Patel",
+      "phone_no": "+5566778899"
+    },
+    "Extreme Depression": {
+      "image_link": "https://media.istockphoto.com/id/1367507209/photo/portrait-of-indian-female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=1AL-5pTDvbBXL4zVSDSDE0NKBW40RWLjKS-QzU35x5A=",
+      "consultant_name": "Dr. H. Gupta",
+      "phone_no": "+6677889900"
+    },
+    "Low Anxiety": {
+      "image_link": "https://media.istockphoto.com/id/1189191657/photo/indian-young-female-doctor-showing-thumbs-up.webp?a=1&b=1&s=612x612&w=0&k=20&c=05cy0fddCtqxsiREp3tGc7yuoVtp1Gdc0d9yzsHms3E=",
+      "consultant_name": "Dr. I. Das",
+      "phone_no": "+7788990011"
+    },
+    "Medium Anxiety": {
+      "image_link": "https://media.istockphoto.com/id/1346711310/photo/portrait-of-smiling-female-doctor-wearing-uniform-standing.jpg?s=612x612&w=0&k=20&c=nPsBL7HwQ7y14HP6J7lcCyKl51X5pPSPGnweXHFzT9o=",
+      "consultant_name": "Dr. J. Roy",
+      "phone_no": "+8899001122"
+    },
+    "High Anxiety": {
+      "image_link": "https://media.istockphoto.com/id/2153383899/photo/portrait-of-smiling-confident-senior-female-doctor-wearing-lab-coat-standing-against-white.jpg?s=612x612&w=is&k=20&c=HIFzXhpAu5vFXpwa6qFt6WKQbfOudy07itrDnT0hfGw=",
+      "consultant_name": "Dr. K. Joshi",
+      "phone_no": "+9900112233"
+    },
+    "Extreme Anxiety": {
+      "image_link": "https://media.istockphoto.com/id/1301595548/photo/female-doctor-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=PW3Lbgi6F8DjYdKffpo6Uyo07ZBxw69utLcASzxX3b0=",
+      "consultant_name": "Dr. L. Agarwal",
+      "phone_no": "+0011223344"
+    }
+  };
+        const exercise = {
+            
+    "High Stress": [
+        {"title": "High-Intensity Interval Training (HIIT)", "image": "https://media.istockphoto.com/id/1279902517/photo/be-as-strong-as-you-were-born-to-be.webp?a=1&b=1&s=612x612&w=0&k=20&c=7TgxbbspQFXKmhH59RHzmdGVdXFDZj-PKlkM0yMCSVM="},
+        {"title": "Kickboxing", "image": "https://media.istockphoto.com/id/1252207646/photo/man-kick-boxer-training-alone-in-gym.webp?a=1&b=1&s=612x612&w=0&k=20&c=gLkiYjCCTs0jQqupE8gzfI51aKbU1etOQBEWRZHigoU="},
+        {"title": "Rock Climbing", "image": "https://media.istockphoto.com/id/1589791875/photo/low-angle-view-of-a-man-climbing-rocky-terrain.webp?a=1&b=1&s=612x612&w=0&k=20&c=mRPGqYYjfgnX3euq-NO7rc_SB1lS8c6IIkrdPHT1drY="},
+        {"title": "Team Sports", "image": "https://media.istockphoto.com/id/1222830050/photo/this-match-is-ours.webp?a=1&b=1&s=612x612&w=0&k=20&c=4e8h4-mI3AHAuneTzMvyudAmbrHUvo99yDCz5EqjkRs="}
+    ],
+    "Medium Stress": [
+        {"title": "Cardio Exercise", "image": "https://media.istockphoto.com/id/879180126/photo/picture-of-people-running-on-treadmill-in-gym.webp?a=1&b=1&s=612x612&w=0&k=20&c=GXaB5cPeAf1g0kRYWOVB9Lkk3z-jge9gOcPiChYgJnw="},
+        {"title": "Swimming", "image": "https://media.istockphoto.com/id/125145097/photo/female-swimmer-at-butterfly-stroke-in-the-sea.webp?a=1&b=1&s=612x612&w=0&k=20&c=q2Q_nVlYMhYKEwgn4ePN71dEq1Lgl37hOow5bl_c5FE="},
+        {"title": "Dancing", "image": "https://media.istockphoto.com/id/1134374645/photo/dancing-together.webp?a=1&b=1&s=612x612&w=0&k=20&c=pkUfJvfozfpsIvwGKB6eI5oVuJ92SzSbt16RyPwy_jA="},
+        {"title": "Cycling", "image": "https://media.istockphoto.com/id/1769626936/photo/people-riding-electric-mountain-bikes.webp?a=1&b=1&s=612x612&w=0&k=20&c=ctsJyAB-ehSsO8PYafmrrXxYPEd-gzUW-Eo80bbk4UI="}
+    ],
+    "Low Stress": [
+        {"title": "Deep Breathing", "image": "https://media.istockphoto.com/id/1176660377/photo/young-woman-doing-breathing-exercise.webp?a=1&b=1&s=612x612&w=0&k=20&c=_H4EfWtwHerQI53cq-gRgl6rKf_pY2eqI1YqjSBaexg="},
+        {"title": "Gentle Yoga", "image": "https://media.istockphoto.com/id/2030734106/photo/two-people-practicing-yoga-childs-pose-in-serene-indoor-setting.webp?a=1&b=1&s=612x612&w=0&k=20&c=GITrJwJGPTdI0Zh6dukdDoRPQPZ79X-P7YhkOl82zjU="},
+        {"title": "Walking in Nature", "image": "https://media.istockphoto.com/id/1344837084/photo/young-woman-with-backpack-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=bnyrSMNm-7aTi-o1R4P9cd5COSVDLibgBJSPgR7pGbU="},
+        {"title": "Mindfulness Meditation", "image": "https://media.istockphoto.com/id/93094168/photo/sun-rising-meditation.webp?a=1&b=1&s=612x612&w=0&k=20&c=jNZ3hda6BkHuENd7_ROO7b4EeOPztF6qykMkEcv4Ts8="}
+    ],
+    "Extreme Stress": [
+        {"title": "Marathon Running", "image": "https://media.istockphoto.com/id/892658004/photo/large-group-of-motivated-runners-running-a-marathon-in-nature.webp?a=1&b=1&s=612x612&w=0&k=20&c=snBlcNArk_0IelBTOK1e0xmBFAm4dvFjtQaVDAOzcFY="},
+        {"title": "CrossFit", "image": "https://media.istockphoto.com/id/1427221641/photo/man-training-with-battle-rope-in-gym-gym.webp?a=1&b=1&s=612x612&w=0&k=20&c=4sWBUcd1tobqNIZ9GO2zckl_E5Gllq7ffjPDoc-ThFo="},
+        {"title": "Triathlon Training", "image": "https://media.istockphoto.com/id/470167712/photo/hes-enjoying-the-ride.webp?a=1&b=1&s=612x612&w=0&k=20&c=lWUUNEO-IcQYt8kbLhTtW7-b7_FWFaDv1QN6XFbioqI="},
+        {"title": "Advanced Yoga", "image": "https://plus.unsplash.com/premium_photo-1669446008661-6729d2e91b00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWR2YW5jZWQlMjB5b2dhfGVufDB8fDB8fHww"}
+    ],
+    "High Anxiety": [
+        {"title": "Exposure Therapy", "image": "https://media.istockphoto.com/id/1372615092/photo/upset-teenage-girl-talks-about-emotions-during-therapy-session.webp?a=1&b=1&s=612x612&w=0&k=20&c=qQ-biWsIVMvJWcWcsj87avogOQfXb62UjXvPJjL3OBI="},
+        {"title": "Meditation Retreat", "image": "https://media.istockphoto.com/id/597963486/photo/its-a-perfect-day-for-yoga-at-the-beach.webp?a=1&b=1&s=612x612&w=0&k=20&c=0M-5IA2-AHvfGw8jEf2gFq5g1ssIDjOBSn64hPQHqMc="},
+        {"title": "Cognitive Behavioral Therapy", "image": "https://media.istockphoto.com/id/1498654263/photo/young-woman-talking-to-therapist-at-session.webp?a=1&b=1&s=612x612&w=0&k=20&c=zQoy9PFvCChMisOU2JnSN3fDwyhSR2y_bJ1tT3Gr3OI="},
+        {"title": "Guided Visualization", "image": "https://media.istockphoto.com/id/2126220982/photo/collaborative-office-environment-multicultural-team-embracing-the-project-vision.webp?a=1&b=1&s=612x612&w=0&k=20&c=jx1rx83pNitjX792WVGzGee6ucrW2tmFXM_75Fl8pCA="}
+    ],
+    "Medium Anxiety": [
+        {"title": "Breathing Exercises", "image": "https://media.istockphoto.com/id/1194094647/photo/handsome-young-man-practicing-yoga-at-park.webp?a=1&b=1&s=612x612&w=0&k=20&c=fLST-6_v2QMraYQc7GFztcKV3ctWz83_dt-qmcYhoPg="},
+        {"title": "Journaling", "image": "https://media.istockphoto.com/id/1077073288/photo/business-man-working-on-laptop-computer-and-writing-notebook.webp?a=1&b=1&s=612x612&w=0&k=20&c=8RTp_46pp2xNjpelMxP-VJa8pIwbhWKp-L9SIhwkz_Q="},
+        {"title": "Yoga", "image": "https://media.istockphoto.com/id/589554884/photo/woman-in-yoga-asana-vrikshasana-tree-pose-in-mountains-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=WRmj3Um1hS1F6n-Hi--mcBRFqfc1fkZjIWoLBSs-DY8="},
+        {"title": "Walking", "image": "https://media.istockphoto.com/id/1310400090/photo/young-strong-athlete-in-blue-t-shirt-jogging-outdoors-at-the-bridge-in-morning.webp?a=1&b=1&s=612x612&w=0&k=20&c=c3khiEQ0aNBzzCeuBSy9RwzqA-834NwrbEDJ6wY149c="}
+    ],
+    "Low Anxiety": [
+    {"title": "Mindfulness Meditation", "image": "https://media.istockphoto.com/id/93094168/photo/sun-rising-meditation.webp?a=1&b=1&s=612x612&w=0&k=20&c=jNZ3hda6BkHuENd7_ROO7b4EeOPztF6qykMkEcv4Ts8="},
+    {"title": "Jogging", "image": "https://media.istockphoto.com/id/1308574122/photo/fitness-woman-exercising-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=-f0J0ijsZ4Qy1C-hZicEJAUm05ZYfewtMlZr0GgSLA8="},
+        {"title": "Relaxation Techniques", "image": "https://media.istockphoto.com/id/872926970/photo/graphic-designer-stretching-her-arms.webp?a=1&b=1&s=612x612&w=0&k=20&c=NPOOemcbx3DmXvG1UG4o3k6xTKyi1HEbNz_JoZfJyqY="},
+        {"title": "Listening to Music", "image": "https://media.istockphoto.com/id/914202356/photo/young-woman-listening-music.webp?a=1&b=1&s=612x612&w=0&k=20&c=mXVpRHLj7h2iOL4Y-Ee_Ho-PrVPAsmFNbUIbpWoaaIg="}
+    ],
+    "Extreme Anxiety": [
+        {"title": "Intensive Therapy Sessions", "image": "https://media.istockphoto.com/id/1218383013/photo/corrective-back-exercises.webp?a=1&b=1&s=612x612&w=0&k=20&c=5EDrVbQOPvTDuOSEvWOiRvg9kTXr_7q6ErjAafx9vfQ="},
+        {"title": "Extreme Exposure Therapy", "image": "https://media.istockphoto.com/id/1067210482/photo/young-brunette-woman-practicing-yoga-in-the-autumn-forest-at-sunset.webp?a=1&b=1&s=612x612&w=0&k=20&c=LcAHT6eVzP359zUmFC4ffJwTplEGAU9i6EFJCHdCSwg="},
+        {"title": "Medication Consultation", "image": "https://media.istockphoto.com/id/1475572450/photo/doctor-talking-to-patient-request-patient-history-treatment-record-and-drug-allergy-history.webp?a=1&b=1&s=612x612&w=0&k=20&c=KlHDkT8BRhmmGinRaRvMdVKo_fRF41Kg8KZf_XPPZNA="},
+        {"title": "Mindfulness Training", "image": "https://media.istockphoto.com/id/1491612759/photo/mindfulness-group-course.webp?a=1&b=1&s=612x612&w=0&k=20&c=N-k9yvQogTXs3f8peUFW8_1DdP8hIFo3wcgmxyNyS-I="}
+    ],
+    "High Depression": [
+        {"title": "Intensive Workout", "image": "https://media.istockphoto.com/id/928849470/photo/anonymous-people-lunging-in-the-gym-during-a-fitness-sprint.webp?a=1&b=1&s=612x612&w=0&k=20&c=utf8-WMiNFaMOBktVjKuUdULXo0u3Jdm9CsfXZGhBNE="},
+        {"title": "Medication Management", "image": "https://media.istockphoto.com/id/956989024/photo/young-beautiful-focused-female-worker-in-sterile-cloths-using-a-tablet-to-check-correction-of.webp?a=1&b=1&s=612x612&w=0&k=20&c=AmZ9q6EwNWqYODfYHx9MdNHnI6N38sxhOKRsSMZhfgA="},
+        {"title": "Support Groups", "image": "https://media.istockphoto.com/id/1265549202/photo/volunteers-cleaning-environment-together.webp?a=1&b=1&s=612x612&w=0&k=20&c=-vHw0SQCiZSyg48cJCKGHI4YydpagutbMD0iLyJGzCU="},
+        {"title": "Art Therapy", "image": "https://media.istockphoto.com/id/1746713700/photo/female-painter-doing-watercolor-painting-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=9oWZYEk7AmU8TWq8g-xeEhNoYtLOEL9NTyLHQukir-o="}
+    ],
+    "Medium Depression": [
+        {"title": "Cognitive Behavioral Therapy", "image": "https://media.istockphoto.com/id/1214458835/photo/depression-psychotherapy-treatment.webp?a=1&b=1&s=612x612&w=0&k=20&c=dmS0eWrxoOqvwxQYXY9ljYZnGKcFaGBKJBQ_MSYojsE="},
+        {"title": "Exercise in Nature", "image": "https://media.istockphoto.com/id/689654176/photo/young-woman-doing-yoga-exercises-in-the-summer-city-park-health-lifestyle-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=00NMhEx3VQspoUoxI6m4fB9Hosja7Vx6ipr3on74A64="},
+        {"title": "Mindfulness Games", "image": "https://media.istockphoto.com/id/1197104185/photo/brain-from-wooden-puzzles-mental-health-and-problems-with-memory.webp?a=1&b=1&s=612x612&w=0&k=20&c=GtVYdmvK4Oc4y9oIM5V0HFM5KMZsrzjPH6puYH9GFDQ="},
+        {"title": "Supportive Counseling", "image": "https://media.istockphoto.com/id/1309449027/photo/biracial-female-psychologist-hands-holding-palms-of-millennial-woman-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=1p_EYNj6JWsfLN7XdhWAkwNPcNBNKvcDFTf66f2r2Yk="}
+    ],
+    "Low Depression": [
+        {"title": "Regular Exercise", "image": "https://media.istockphoto.com/id/1203214772/photo/sport.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ksk-KpkhK44NEBrrFeeLp56LuzJ2JS7stnTiTPDQEyg="},
+        {"title": "Journaling", "image": "https://media.istockphoto.com/id/1301757934/photo/woman-hand-writing-on-notebook-with-pencil-at-river-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=H2HenmJE3yHfq8F-1w7dns78_m-NBcfNyyw7j9V0Caw="},
+        {"title": "Hiking", "image": "https://media.istockphoto.com/id/916307834/photo/woman-lifts-her-arms-in-victory-mount-everest-national-park.webp?a=1&b=1&s=612x612&w=0&k=20&c=57UK89kN6vNonaCy89HYQA_qdUx-E6jsihQZTBcaJx4="},
+        {"title": "Talking to Friends", "image": "https://media.istockphoto.com/id/1289142883/photo/two-senior-men-discussing-on-park-bench.webp?a=1&b=1&s=612x612&w=0&k=20&c=UvSZrZxZk4qmkjH_r_DkZ3trL_BpLxxgmFlEBRJEnWs="}
+    ],
+    "Extreme Depression": [
+        {"title": "Hospitalization", "image": "https://media.istockphoto.com/id/1418999473/photo/doctors-comforting-disabled-elderly-patient.webp?a=1&b=1&s=612x612&w=0&k=20&c=YwTJIt9-LX4Acp_3ng6BD3_pke2MHOqNMqMgR2adg_g="},
+        {"title": "Intensive Therapy Programs", "image": "https://media.istockphoto.com/id/965851348/photo/doctor-consulting-male-patient-working-on-diagnostic-examination-on-mens-health-disease-or.webp?a=1&b=1&s=612x612&w=0&k=20&c=L6YLk75iAthU7or9rmOQIHf8L5c8HFuLaJou8uTy8u4="},
+        {"title": "Electroconvulsive Therapy", "image": "https://media.istockphoto.com/id/174934252/photo/electro-shock-machine.webp?a=1&b=1&s=612x612&w=0&k=20&c=-0G9paA8mO8tevJMT9UFL24eRMTktchr2jjyPN6ytL4="},
+        {"title": "Medication Management", "image": "https://media.istockphoto.com/id/1299306712/photo/close-up-shot-a-mature-woman-taking-and-organizing-medicines.webp?a=1&b=1&s=612x612&w=0&k=20&c=M1wa4fqZ48LAx8DaMAuaB_sRLnyYCWO1C9TxxGWlDPE="}
+    ]
+};
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const variable = urlParams.get('var'); // Get the value of the variable passed
+        console.log(variable);
+        const h1Element = document.getElementById('varDisplay'); // Select the <h1> by its ID
+        h1Element.textContent = variable ? `${variable} Exercises` : "No Data Provided"; // Default message if variable is not present
+        const consultantData = consultant[variable];
+
+    // Create the HTML structure
+    if (consultantData) {
+        const consultantContainer = document.getElementById('consultant-container');
+        consultantContainer.innerHTML = `
+            <div class="box">
+                <img src="${consultantData.image_link}" alt="${consultantData.consultant_name}">
+                <div class="meditation-title">${consultantData.consultant_name}</div>
+                <div class="desc">Phone: ${consultantData.phone_no}</div>
+            </div>
+        `;
+    }
+        // Load exercises based on the variable
+        let currentState = exercise[variable];
+
+        // Get the exercises for the current state
+        const exerciseContainer = document.getElementById('exercise-container');
+        exerciseContainer.innerHTML = ''; // Clear previous exercises
+
+        if (currentState && currentState.length > 0) {
+            // Create and append exercise boxes
+            currentState.forEach(item => {
+                const box = document.createElement('div');
+                box.className = 'box';
+
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.title;
+
+                const title = document.createElement('div');
+                title.className = 'exercise-title';
+                title.innerText = item.title;
+
+                box.appendChild(img);
+                box.appendChild(title);
+                exerciseContainer.appendChild(box);
+            });
+        } else {
+            const noDataMessage = document.createElement('div');
+            noDataMessage.textContent = "No exercises available for this category.";
+            exerciseContainer.appendChild(noDataMessage);
+        }
+    </script>
+
+   
+       
+</body>
+</html>
